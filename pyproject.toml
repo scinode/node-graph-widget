@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "node-graph-widget"
-version = "0.0.1"
+version = "0.0.2"
 description = "Widget for node-graph"
 authors = [{name = "Xing Wang", email = "xingwang1991@gmail.com"}]
 readme = "README.md"
