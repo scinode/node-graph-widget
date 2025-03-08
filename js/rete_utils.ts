@@ -97,7 +97,7 @@ export async function loadJSON(editor, area, layout, workgraphData) {
   for (const nodeId in workgraphData.nodes) {
     const nodeData = workgraphData.nodes[nodeId];
     const node_type = nodeData['node_type'];
-    if (node_type === "WHILE" || node_type === "IF" || node_type === "ZONE") {
+    if (node_type === "WHILE" || node_type === "IF" || node_type === "ZONE" || node_type === "MAP") {
       // find the node
       const node = editor.nodeMap[nodeData.label];
       const children = nodeData['children'];
