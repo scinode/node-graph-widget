@@ -149,7 +149,7 @@ html_template = """
           for (const nodeId in nodegraphData.nodes) {
             const nodeData = nodegraphData.nodes[nodeId];
             const node_type = nodeData['node_type'];
-            if (node_type === "WHILE" || node_type === "IF" || node_type === "ZONE") {
+            if (node_type === "WHILE" || node_type === "IF" || node_type === "ZONE" || node_type === "MAP") {
               // find the node
               const node = editor.nodeMap[nodeData.label];
               const children = nodeData['children'];
