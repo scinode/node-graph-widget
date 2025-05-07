@@ -1,4 +1,4 @@
-from typing import Optional, Dict, Any
+from typing import Optional, Any
 import importlib.metadata
 import pathlib
 
@@ -46,10 +46,11 @@ class NodeGraphWidget(anywidget.AnyWidget):
             f.write(html_content)
         return IFrame(output, width=width, height=height)
 
-    @traitlets.observe("positions")
-    def _observe_positions(self, change: Dict[str, Any]) -> None:
-        if not self.parent:
-            return
-        if change["new"]:
-            for name, pos in change["new"].items():
-                self.parent.nodes[name].position = pos
+    # @traitlets.observe("positions")
+    # def _observe_positions(self, change: Dict[str, Any]) -> None:
+    #     if not self.parent:
+    #         return
+    #     if change["new"]:
+    #         for name, pos in change["new"].items():
+    #             if name in self.parent.nodes:
+    #                 self.parent.nodes[name].position = pos
