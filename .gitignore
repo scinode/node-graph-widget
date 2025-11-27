@@ -165,3 +165,10 @@ test.ipynb
 tests/notebooks/test-results
 tests/notebooks/playwright-report
 tests/notebooks/.yarn/cache
+
+# Sphinx documentation
+docs/_build/
+docs/source/**/*.txt
+/docs/gallery/**/*html
+/docs/source/**/autogen
+/docs/source/sg_execution_times.rst

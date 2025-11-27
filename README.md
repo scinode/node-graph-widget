@@ -1,9 +1,9 @@
-# Welcome to NodeGraph Widget!
+# Welcome to node-graph Widget!
 [![PyPI version](https://badge.fury.io/py/node-graph-widget.svg)](https://badge.fury.io/py/node-graph-widget)
 [![Docs status](https://readthedocs.org/projects/node-graph-widget/badge)](http://node-graph-widget.readthedocs.io/)
 [![Unit test](https://github.com/scinode/node-graph-widget/actions/workflows/ci.yml/badge.svg)](https://github.com/scinode/node-graph-widget/actions/workflows/ci.yml)
 
-Widget to visualize the node graph.
+Widget to visualize the graph.
 
 ## Development installation
 

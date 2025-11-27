@@ -1,7 +1,7 @@
 
-Welcome to NodeGraph Widget's documentation!
+Welcome to node-graph Widget's documentation!
 ===========================================
-A widget to visualize the node graph in Jupyter Notebook.
+A widget to visualize the graph in Jupyter Notebook.
 
 
 .. note::
@@ -13,14 +13,5 @@ A widget to visualize the node graph in Jupyter Notebook.
    :maxdepth: 1
    :caption: Contents:
 
-   quick_start
+   autogen/quick_start
    installation
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
