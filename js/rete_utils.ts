@@ -88,9 +88,9 @@ export async function loadJSON(editor, area, layout, workgraphData) {
   }
 
   // Adding connections based on workgraphData
-  workgraphData.links.forEach(async (link: LinkData) => { // Specify the type of link here
+  for (const link of workgraphData.links) {
     await addLink(editor, area, layout, link);
-  });
+  }
 
   // Add while zones
   console.log("Adding while zone: ");
@@ -170,6 +170,20 @@ export async function removeNode(editor, name) {
     delete editor.nodeMap[name];
     console.log("Deleted node successfully");
   });
+}
+
+export async function clearEditor(editor) {
+  const connections = editor.getConnections();
+  for (const connection of connections) {
+    await editor.removeConnection(connection.id);
+  }
+
+  const nodes = editor.getNodes();
+  for (const node of nodes) {
+    await editor.removeNode(node.id);
+  }
+
+  editor.nodeMap = {};
 }
 
 /**
