@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Button, Switch } from "antd";
 import { createRender, useModel, useModelState } from "@anywidget/react";
-import { createEditor, loadJSON, removeNode, addNode, addLink, removeLink } from "./rete_utils";
+import { createEditor, loadJSON, removeNode, addNode, addLink, removeLink, clearEditor } from "./rete_utils";
 import "./widget.css";
 
 export function useRete<T extends { destroy(): void }>(
@@ -154,13 +154,20 @@ const render = createRender(() => {
       console.log("Editor not ready");
       return;
     };
-    // same uuid skip
-    if (editor.editor.uuid && editor.editor.uuid === value.uuid) {
-      console.log("Same uuid, skip");
+    if (!value) {
       return;
     }
-    loadJSON(editor.editor, editor.area, editor.layout, value);
-  }, [isInitialized, value]);
+    const incomingUuid = value?.uuid;
+    const applyValue = async () => {
+      await clearEditor(editor.editor);
+      await loadJSON(editor.editor, editor.area, editor.layout, value);
+      if (incomingUuid) {
+        editor.editor.uuid = incomingUuid;
+      }
+      await editor.layout(true);
+    };
+    applyValue();
+  }, [editor, isInitialized, value]);
 
   return (
     <div className="App">
